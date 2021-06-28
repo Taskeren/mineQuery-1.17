@@ -1,0 +1,18 @@
+{
+  "text.minequery.autorevive": "You died and revived!",
+
+  "text.autoconfig.minequery.title": "MineQuery Configuration",
+  "text.autoconfig.minequery.option.reseeding": "ReSeeding",
+  "text.autoconfig.minequery.option.autoRevive": "Auto Revive",
+  "text.autoconfig.minequery.option.harvestXConfig": "HarvestX Configuration",
+  "text.autoconfig.minequery.option.harvestXConfig.harvestX": "Enable HarvestX",
+  "text.autoconfig.minequery.option.harvestXConfig.checkCrops": "Check Crops",
+  "text.autoconfig.minequery.option.harvestXConfig.checkNetherWart": "Check Nether Wart",
+  "text.autoconfig.minequery.option.harvestXConfig.checkCactus": "Check Cactus",
+  "text.autoconfig.minequery.option.harvestXConfig.checkSugarCane": "Check Sugar Cane",
+  "text.autoconfig.minequery.option.harvestXConfig.checkStem": "Check Stem",
+  "text.autoconfig.minequery.option.notHitConfig": "Not Hit Configuration",
+  "text.autoconfig.minequery.option.notHitConfig.notHit": "Enable Not Hit",
+  "text.autoconfig.minequery.option.notHitConfig.ironGolem": "Prevent Attack Iron Golem",
+  "text.autoconfig.minequery.option.notHitConfig.villager": "Prevent Attack Villager"
+}

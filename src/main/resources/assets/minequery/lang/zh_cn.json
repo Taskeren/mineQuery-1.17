@@ -1,0 +1,18 @@
+{
+  "text.minequery.autorevive": "你死了，你活了！",
+
+  "text.autoconfig.minequery.title": "MC宝设置",
+  "text.autoconfig.minequery.option.reseeding": "重新播种",
+  "text.autoconfig.minequery.option.autoRevive": "自动复活",
+  "text.autoconfig.minequery.option.harvestXConfig": "收割检查设置",
+  "text.autoconfig.minequery.option.harvestXConfig.harvestX": "启用收割检查",
+  "text.autoconfig.minequery.option.harvestXConfig.checkCrops": "检查作物",
+  "text.autoconfig.minequery.option.harvestXConfig.checkNetherWart": "检查地狱疣",
+  "text.autoconfig.minequery.option.harvestXConfig.checkCactus": "检查仙人掌",
+  "text.autoconfig.minequery.option.harvestXConfig.checkSugarCane": "检查甘蔗",
+  "text.autoconfig.minequery.option.harvestXConfig.checkStem": "检查瓜梗",
+  "text.autoconfig.minequery.option.notHitConfig": "不打他设置",
+  "text.autoconfig.minequery.option.notHitConfig.notHit": "启用不打他",
+  "text.autoconfig.minequery.option.notHitConfig.ironGolem": "不打铁傀儡",
+  "text.autoconfig.minequery.option.notHitConfig.villager": "不打村民"
+}

@@ -1,29 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "minequery",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "MineQuery",
+  "description": "A mod for survivers.",
   "authors": [
-    "Me!"
+    "Taskeren"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/nitu2003/mineQuery-1.17",
+    "sources": "https://github.com/nitu2003/mineQuery-1.17"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/minequery/icon.png",
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "client": [
+      "cn.taskeren.minequery.MineQueryMod"
+    ],
+    "modmenu": [
+      "cn.taskeren.minequery.config.MineQueryConfigModMenu"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "minequery.mixins.json"
   ],
 
   "depends": {
