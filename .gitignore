@@ -32,4 +32,4 @@ bin/
 
 run/
 
-gradle.properties
+gradle-wrapper.properties
