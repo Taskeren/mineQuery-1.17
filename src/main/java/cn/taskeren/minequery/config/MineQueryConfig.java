@@ -6,6 +6,11 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
+import java.util.ArrayList;
+
+import static cn.taskeren.minequery.key.KeyToCommand.KEY_BINDING_SIZE;
+import static cn.taskeren.minequery.key.KeyToCommand.getKeyBindingSize;
+
 @Config(name = MineQueryMod.MOD_ID)
 public class MineQueryConfig implements ConfigData {
 
@@ -17,6 +22,9 @@ public class MineQueryConfig implements ConfigData {
 
 	@ConfigEntry.Gui.CollapsibleObject
 	public NotHitConfig notHitConfig = new NotHitConfig();
+
+	@ConfigEntry.BoundedDiscrete(max = KEY_BINDING_SIZE)
+	public ArrayList<String> key2Cmd = new ArrayList<>();
 
 	public static class HarvestXConfig {
 		public boolean harvestX = true;
@@ -30,7 +38,7 @@ public class MineQueryConfig implements ConfigData {
 	public static class NotHitConfig {
 		public boolean notHit    = true;
 
-		@ConfigEntry.Gui.EnumHandler
+		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
 		public CanDamage ironGolem = CanDamage.ALL;
 
 		public boolean villager = true;

@@ -5,6 +5,7 @@ import cn.taskeren.minequery.callback.NotHit;
 import cn.taskeren.minequery.command.CmdCalculator;
 import cn.taskeren.minequery.command.CmdLocationCalc;
 import cn.taskeren.minequery.config.MineQueryConfig;
+import cn.taskeren.minequery.key.KeyToCommand;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
@@ -31,6 +32,8 @@ public class MineQueryMod implements ClientModInitializer {
 
 		CmdCalculator.register();
 		CmdLocationCalc.register();
+
+		KeyToCommand.init();
 	}
 
 }
