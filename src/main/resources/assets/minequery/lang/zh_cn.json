@@ -1,6 +1,11 @@
 {
   "text.minequery.autorevive": "你死了，你活了！",
 
+  "text.minequery.calculator.done": "%s §7=> %s",
+  "text.minequery.calculator.error": "[/=] §c错误： %s",
+  "text.minequery.localc.to_nether": "主世界 -> 下界： %s/%s",
+  "text.minequery.localc.to_overworld": "下界 -> 主世界： %s/%s",
+
   "text.autoconfig.minequery.title": "MC宝设置",
   "text.autoconfig.minequery.option.reseeding": "重新播种",
   "text.autoconfig.minequery.option.autoRevive": "自动复活",

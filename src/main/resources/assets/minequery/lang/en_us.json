@@ -1,6 +1,11 @@
 {
   "text.minequery.autorevive": "You died and revived!",
 
+  "text.minequery.calculator.done": "%s §7=> %s",
+  "text.minequery.calculator.error": "[/=] §cError: %s",
+  "text.minequery.localc.to_nether": "Overworld -> Nether: %s/%s",
+  "text.minequery.localc.to_overworld": "Nether -> Overworld: %s/%s",
+
   "text.autoconfig.minequery.title": "MineQuery Configuration",
   "text.autoconfig.minequery.option.reseeding": "ReSeeding",
   "text.autoconfig.minequery.option.autoRevive": "Auto Revive",

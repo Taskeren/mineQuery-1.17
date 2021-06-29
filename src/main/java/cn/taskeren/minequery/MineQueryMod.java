@@ -2,6 +2,8 @@ package cn.taskeren.minequery;
 
 import cn.taskeren.minequery.callback.HarvestCheck;
 import cn.taskeren.minequery.callback.NotHit;
+import cn.taskeren.minequery.command.CmdCalculator;
+import cn.taskeren.minequery.command.CmdLocationCalc;
 import cn.taskeren.minequery.config.MineQueryConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -26,6 +28,9 @@ public class MineQueryMod implements ClientModInitializer {
 		AttackBlockCallback.EVENT.register(HarvestCheck.INSTANCE);
 		AttackEntityCallback.EVENT.register(NotHit.IronGolem.INSTANCE);
 		AttackEntityCallback.EVENT.register(NotHit.Villager.INSTANCE);
+
+		CmdCalculator.register();
+		CmdLocationCalc.register();
 	}
 
 }
