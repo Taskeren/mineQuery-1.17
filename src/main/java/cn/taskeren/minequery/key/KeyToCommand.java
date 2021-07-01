@@ -23,21 +23,14 @@ public class KeyToCommand {
 
 	private KeyToCommand() {}
 
-	public static int getKeyBindingSize() {
-		return KEY_BINDING_SIZE;
-	}
-
 	public static void init() {
-		init(getKeyBindingSize());
-		ClientTickEvents.END_CLIENT_TICK.register(KeyToCommand::tick);
-	}
-
-	public static void init(int total) {
-		for(int i = 0; i < total; i++) {
+		for(int i = 0; i < KEY_BINDING_SIZE; i++) {
 			int k = keyBindings.size();
 			KeyBinding binding = createKeyBinding(k);
 			keyBindings.add(binding);
 		}
+
+		ClientTickEvents.END_CLIENT_TICK.register(KeyToCommand::tick);
 	}
 
 	private static KeyBinding createKeyBinding(int i) {

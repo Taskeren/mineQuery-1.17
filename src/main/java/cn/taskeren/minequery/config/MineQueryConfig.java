@@ -9,7 +9,6 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import java.util.ArrayList;
 
 import static cn.taskeren.minequery.key.KeyToCommand.KEY_BINDING_SIZE;
-import static cn.taskeren.minequery.key.KeyToCommand.getKeyBindingSize;
 
 @Config(name = MineQueryMod.MOD_ID)
 public class MineQueryConfig implements ConfigData {
