@@ -19,6 +19,11 @@
   "keybinding.minequery.key2cmd.8": "键对令 #8",
   "keybinding.minequery.key2cmd.9": "键对令 #9",
 
+  "text.minequery.notplace.toggle.allowed": "解禁%s面的放置",
+  "text.minequery.notplace.toggle.prevented": "禁止%s面的放置",
+  "text.minequery.notplace.tooltip.allowed": "%s面: 允许",
+  "text.minequery.notplace.tooltip.prevented": "%s面: 禁止",
+
   "text.autoconfig.minequery.title": "MC宝设置",
   "text.autoconfig.minequery.option.reseeding": "重新播种",
   "text.autoconfig.minequery.option.autoRevive": "自动复活",

@@ -2,7 +2,6 @@ package cn.taskeren.minequery.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.DeathScreen;
-import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.text.TranslatableText;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +23,7 @@ public abstract class DeathScreenMixin {
 		if(config().autoRevive) {
 			ClientPlayerEntity cp = MinecraftClient.getInstance().player;
 			if(cp != null) {
-				cp.requestRespawn();
+				onConfirmQuit(false);
 				cp.sendMessage(new TranslatableText("text.minequery.autorevive"), true);
 			}
 		}

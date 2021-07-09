@@ -5,8 +5,10 @@ import cn.taskeren.minequery.callback.NotHit.IronGolem.CanDamage;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import net.minecraft.util.math.Direction;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 
 import static cn.taskeren.minequery.key.KeyToCommand.KEY_BINDING_SIZE;
 
@@ -21,6 +23,9 @@ public class MineQueryConfig implements ConfigData {
 
 	@ConfigEntry.Gui.CollapsibleObject
 	public NotHitConfig notHitConfig = new NotHitConfig();
+
+	@ConfigEntry.Gui.Excluded
+	public NotPlaceConfig notPlaceConfig = new NotPlaceConfig();
 
 	@ConfigEntry.BoundedDiscrete(max = KEY_BINDING_SIZE)
 	public ArrayList<String> key2Cmd = new ArrayList<>();
@@ -41,6 +46,27 @@ public class MineQueryConfig implements ConfigData {
 		public CanDamage ironGolem = CanDamage.ALL;
 
 		public boolean villager = true;
+	}
+
+	/**
+	 * Use NotPlacingConfig#isPrevented to check. True to prevent.
+	 */
+	public static class NotPlaceConfig {
+		public EnumMap<Direction, Boolean> map = new EnumMap<>(Direction.class);
+
+		public boolean isPrevented(Direction direction) {
+			return map.getOrDefault(direction, false);
+		}
+
+		public void setPrevented(Direction direction, boolean value) {
+			map.put(direction, value);
+		}
+
+		public boolean toggle(Direction direction) {
+			boolean flag = !isPrevented(direction);
+			setPrevented(direction, flag);
+			return flag;
+		}
 	}
 
 }
