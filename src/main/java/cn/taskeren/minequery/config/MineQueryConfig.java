@@ -18,6 +18,8 @@ public class MineQueryConfig implements ConfigData {
 	public boolean reseeding = true;
 	public boolean autoRevive = true;
 
+	public boolean feedEm = true;
+
 	@ConfigEntry.Gui.CollapsibleObject
 	public HarvestXConfig harvestXConfig = new HarvestXConfig();
 

@@ -38,5 +38,6 @@
   "text.autoconfig.minequery.option.notHitConfig.notHit": "Enable Not Hit",
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "Prevent Attack Iron Golem",
   "text.autoconfig.minequery.option.notHitConfig.villager": "Prevent Attack Villager",
-  "text.autoconfig.minequery.option.key2Cmd": "Key2Cmd Command Configuration"
+  "text.autoconfig.minequery.option.key2Cmd": "Key2Cmd Command Configuration",
+  "text.autoconfig.minequery.option.feedEm": "Feed 'Em"
 }

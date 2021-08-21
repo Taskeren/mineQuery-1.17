@@ -1,5 +1,6 @@
 package cn.taskeren.minequery;
 
+import cn.taskeren.minequery.callback.FeedEm;
 import cn.taskeren.minequery.callback.HarvestCheck;
 import cn.taskeren.minequery.callback.NotHit;
 import cn.taskeren.minequery.callback.NotPlace;
@@ -45,6 +46,7 @@ public class MineQueryMod implements ClientModInitializer {
 		CmdLocationCalc.register();
 
 		KeyToCommand.init();
+		FeedEm.init();
 	}
 
 }

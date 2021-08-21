@@ -38,5 +38,6 @@
   "text.autoconfig.minequery.option.notHitConfig.notHit": "启用不打他",
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "不打铁傀儡",
   "text.autoconfig.minequery.option.notHitConfig.villager": "不打村民",
-  "text.autoconfig.minequery.option.key2Cmd": "键对令指令设置"
+  "text.autoconfig.minequery.option.key2Cmd": "键对令指令设置",
+  "text.autoconfig.minequery.option.feedEm": "喂它丫的"
 }
