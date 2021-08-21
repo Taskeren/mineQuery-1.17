@@ -1,5 +1,7 @@
 # MineQuery Mod
 
+[MCBBS宣传贴](https://www.mcbbs.net/thread-1215659-1-1.html)
+
 ## 介绍
 
 我制作 __MineQuery__ 为了整一些简单的辅助。所以可以看到模组里的功能都是一些辅助类功能。
