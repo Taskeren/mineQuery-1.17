@@ -2,7 +2,6 @@ package cn.taskeren.minequery.key;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
@@ -12,12 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN;
 
 public class KeyToCommand {
 
 	public static final int KEY_BINDING_SIZE = 10;
-	public static final int KEY_CODE_UNKNOWN = -1;
-	public static final String KEY_CATEGORY = "keybinding.minequery";
 
 	public static ArrayList<KeyBinding> keyBindings = new ArrayList<>();
 
@@ -34,9 +32,7 @@ public class KeyToCommand {
 	}
 
 	private static KeyBinding createKeyBinding(int i) {
-		KeyBinding binding = new KeyBinding(getKeyTranslation(i), KEY_CODE_UNKNOWN, KEY_CATEGORY);
-		KeyBindingHelper.registerKeyBinding(binding);
-		return binding;
+		return ModKeys.registerKey(getKeyTranslation(i), GLFW_KEY_UNKNOWN);
 	}
 
 	static void tick(MinecraftClient client) {

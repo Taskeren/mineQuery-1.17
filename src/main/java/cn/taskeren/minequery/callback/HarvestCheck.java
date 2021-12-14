@@ -11,10 +11,15 @@ import net.minecraft.world.World;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class HarvestCheck implements AttackBlockCallback {
+public class HarvestCheck implements AttackBlockCallback, Registerable {
 	public static final HarvestCheck INSTANCE = new HarvestCheck();
 
 	private HarvestCheck() {}
+
+	@Override
+	public void register() {
+		AttackBlockCallback.EVENT.register(this);
+	}
 
 	@Override
 	public ActionResult interact(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction direction) {

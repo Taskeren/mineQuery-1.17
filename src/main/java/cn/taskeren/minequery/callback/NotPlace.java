@@ -20,11 +20,17 @@ import java.util.List;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class NotPlace implements UseBlockCallback, ItemTooltipCallback {
+public class NotPlace implements UseBlockCallback, ItemTooltipCallback, Registerable {
 
 	public static final NotPlace INSTANCE = new NotPlace();
 
 	private NotPlace() {}
+
+	@Override
+	public void register() {
+		UseBlockCallback.EVENT.register(this);
+		ItemTooltipCallback.EVENT.register(this);
+	}
 
 	private static boolean validateItemStack(ItemStack stack) {
 		return stack.isOf(Items.STICK) && stack.getName().getString().equalsIgnoreCase("NotPlace");

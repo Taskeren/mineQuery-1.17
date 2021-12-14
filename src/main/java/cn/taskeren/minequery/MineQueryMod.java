@@ -1,25 +1,25 @@
 package cn.taskeren.minequery;
 
-import cn.taskeren.minequery.callback.FeedEm;
 import cn.taskeren.minequery.callback.HarvestCheck;
 import cn.taskeren.minequery.callback.NotHit;
 import cn.taskeren.minequery.callback.NotPlace;
 import cn.taskeren.minequery.command.CmdCalculator;
 import cn.taskeren.minequery.command.CmdLocationCalc;
 import cn.taskeren.minequery.config.MineQueryConfig;
+import cn.taskeren.minequery.key.FeedEm;
 import cn.taskeren.minequery.key.KeyToCommand;
+import cn.taskeren.minequery.key.ModKeys;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
-import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.loader.api.FabricLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MineQueryMod implements ClientModInitializer {
 
 	public static final String MOD_ID = "minequery";
+	public static final Logger LOGGER = LogManager.getLogger("Minequery");
 
 	public static MineQueryConfig config() {
 		return AutoConfig.getConfigHolder(MineQueryConfig.class).getConfig();
@@ -27,26 +27,35 @@ public class MineQueryMod implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		System.out.println("MineQuery!");
+		LOGGER.info("Minequery!");
 
 		if(FabricLoader.getInstance().isDevelopmentEnvironment()) {
-			System.out.println("Hopeless");
+			LOGGER.warn("Using Development Environment");
 		}
 
-		AutoConfig.register(MineQueryConfig.class, JanksonConfigSerializer::new);
+		useConfig();
 
-		AttackBlockCallback.EVENT.register(HarvestCheck.INSTANCE);
-		AttackEntityCallback.EVENT.register(NotHit.IronGolem.INSTANCE);
-		AttackEntityCallback.EVENT.register(NotHit.Villager.INSTANCE);
+		registerCallbacks();
+		registerCommands();
 
-		UseBlockCallback.EVENT.register(NotPlace.INSTANCE);
-		ItemTooltipCallback.EVENT.register(NotPlace.INSTANCE);
-
-		CmdCalculator.register();
-		CmdLocationCalc.register();
-
+		ModKeys.init();
 		KeyToCommand.init();
 		FeedEm.init();
+	}
+
+	static void useConfig() {
+		AutoConfig.register(MineQueryConfig.class, JanksonConfigSerializer::new);
+	}
+
+	static void registerCallbacks() {
+		HarvestCheck.INSTANCE.register();
+		NotHit.INSTANCE.register();
+		NotPlace.INSTANCE.register();
+	}
+
+	static void registerCommands() {
+		CmdCalculator.register();
+		CmdLocationCalc.register();
 	}
 
 }

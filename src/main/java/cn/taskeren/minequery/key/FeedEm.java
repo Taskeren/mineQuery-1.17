@@ -1,4 +1,4 @@
-package cn.taskeren.minequery.callback;
+package cn.taskeren.minequery.key;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -28,12 +28,12 @@ public class FeedEm {
 			return;
 		}
 
-		ClientPlayerEntity cp = client.player;
-		if(cp == null) {
-			return;
-		}
+		if(ModKeys.keyFeedEm.isPressed()) {
+			ClientPlayerEntity cp = client.player;
+			if(cp == null) {
+				return;
+			}
 
-		if(cp.isSneaking()) {
 			ItemStack stack = cp.getMainHandStack();
 			if(stack.isEmpty() || stack.getItem() instanceof SpawnEggItem) { // 手里不能没东西，也不能是刷怪蛋
 				return;

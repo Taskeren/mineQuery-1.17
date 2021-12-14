@@ -13,7 +13,17 @@ import org.jetbrains.annotations.Nullable;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class NotHit {
+public class NotHit implements Registerable {
+
+	public static final NotHit INSTANCE = new NotHit();
+
+	private NotHit() {}
+
+	@Override
+	public void register() {
+		AttackEntityCallback.EVENT.register(IronGolem.INSTANCE);
+		AttackEntityCallback.EVENT.register(Villager.INSTANCE);
+	}
 
 	public static class IronGolem implements AttackEntityCallback {
 
