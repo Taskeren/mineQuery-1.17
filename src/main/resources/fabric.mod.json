@@ -10,13 +10,14 @@
   ],
   "contact": {
     "homepage": "https://github.com/nitu2003/mineQuery-1.17",
-    "sources": "https://github.com/nitu2003/mineQuery-1.17"
+    "sources": "https://github.com/nitu2003/mineQuery-1.17",
+    "issues": "https://github.com/nitu2003/mineQuery-1.17/issues"
   },
 
   "license": "CC0-1.0",
   "icon": "assets/minequery/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "cn.taskeren.minequery.MineQueryMod"
@@ -33,9 +34,18 @@
     "fabricloader": ">=0.11.3",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "java": ">=17"
+    "java": ">=17",
+    "cloth-config": "*"
   },
   "suggests": {
     "another-mod": "*"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/EGhafG4Y"
+      }
+    }
   }
 }
