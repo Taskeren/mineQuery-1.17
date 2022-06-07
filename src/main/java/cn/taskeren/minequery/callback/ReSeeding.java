@@ -27,10 +27,10 @@ public class ReSeeding {
 		}
 
 		EXECUTORS.submit(() -> {
-			Vec3d ppos = player.getPos();
 			BlockPos bpos = pos.down();
-			BlockHitResult bhr = new BlockHitResult(ppos, Direction.UP, bpos, false);
+			BlockHitResult bhr = new BlockHitResult(Vec3d.ofCenter(bpos), Direction.UP, bpos, false);
 			PlayerInteractBlockC2SPacket packet = new PlayerInteractBlockC2SPacket(Hand.MAIN_HAND, bhr);
+
 			try {
 				TimeUnit.MILLISECONDS.sleep(5);
 			} catch(InterruptedException ex) {
