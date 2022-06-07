@@ -34,6 +34,7 @@
   "text.autoconfig.minequery.option.harvestXConfig.checkCactus": "检查仙人掌",
   "text.autoconfig.minequery.option.harvestXConfig.checkSugarCane": "检查甘蔗",
   "text.autoconfig.minequery.option.harvestXConfig.checkStem": "检查瓜梗",
+  "text.autoconfig.minequery.option.harvestXConfig.disableOnSneaking": "蹲下时关闭收割检查",
   "text.autoconfig.minequery.option.notHitConfig": "不打他设置",
   "text.autoconfig.minequery.option.notHitConfig.notHit": "启用不打他",
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "不打铁傀儡",

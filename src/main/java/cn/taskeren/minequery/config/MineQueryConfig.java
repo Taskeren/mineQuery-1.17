@@ -34,15 +34,16 @@ public class MineQueryConfig implements ConfigData {
 
 	public static class HarvestXConfig {
 		public boolean harvestX = true;
-		public boolean checkCrops      = true;
+		public boolean checkCrops = true;
 		public boolean checkNetherWart = true;
-		public boolean checkCactus     = true;
-		public boolean checkSugarCane  = true;
-		public boolean checkStem       = true;
+		public boolean checkCactus = true;
+		public boolean checkSugarCane = true;
+		public boolean checkStem = true;
+		public boolean disableOnSneaking = true;
 	}
 
 	public static class NotHitConfig {
-		public boolean notHit    = true;
+		public boolean notHit = true;
 
 		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
 		public CanDamage ironGolem = CanDamage.ALL;

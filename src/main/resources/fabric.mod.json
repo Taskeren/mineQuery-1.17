@@ -38,7 +38,7 @@
     "cloth-config": "*"
   },
   "suggests": {
-    "another-mod": "*"
+    "modmenu": "*"
   },
 
   "custom": {

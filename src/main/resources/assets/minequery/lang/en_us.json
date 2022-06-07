@@ -34,6 +34,7 @@
   "text.autoconfig.minequery.option.harvestXConfig.checkCactus": "Check Cactus",
   "text.autoconfig.minequery.option.harvestXConfig.checkSugarCane": "Check Sugar Cane",
   "text.autoconfig.minequery.option.harvestXConfig.checkStem": "Check Stem",
+  "text.autoconfig.minequery.option.harvestXConfig.disableOnSneaking": "Disable HarvestX when Sneaking",
   "text.autoconfig.minequery.option.notHitConfig": "Not Hit Configuration",
   "text.autoconfig.minequery.option.notHitConfig.notHit": "Enable Not Hit",
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "Prevent Attack Iron Golem",
