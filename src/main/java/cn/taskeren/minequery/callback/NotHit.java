@@ -31,7 +31,7 @@ public class NotHit implements Registerable {
 
 		private IronGolem() {}
 
-		public enum CanDamage {
+		public enum PreventDamage {
 			ALL,
 			NATURAL_ONLY,
 			PLAYER_ONLY,
@@ -47,16 +47,16 @@ public class NotHit implements Registerable {
 				boolean playerCreated = ((IronGolemEntity) entity).isPlayerCreated();
 				switch(config().notHitConfig.ironGolem) {
 					case ALL -> {
-						return ActionResult.PASS;
+						return ActionResult.FAIL;
 					}
 					case NATURAL_ONLY -> {
-						return playerCreated ? ActionResult.FAIL : ActionResult.PASS;
-					}
-					case PLAYER_ONLY -> {
 						return playerCreated ? ActionResult.PASS : ActionResult.FAIL;
 					}
+					case PLAYER_ONLY -> {
+						return playerCreated ? ActionResult.FAIL : ActionResult.PASS;
+					}
 					case NONE -> {
-						return ActionResult.FAIL;
+						return ActionResult.PASS;
 					}
 				}
 			}

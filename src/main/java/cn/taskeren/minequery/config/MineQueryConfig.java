@@ -1,7 +1,7 @@
 package cn.taskeren.minequery.config;
 
 import cn.taskeren.minequery.MineQueryMod;
-import cn.taskeren.minequery.callback.NotHit.IronGolem.CanDamage;
+import cn.taskeren.minequery.callback.NotHit.IronGolem.PreventDamage;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
@@ -45,8 +45,8 @@ public class MineQueryConfig implements ConfigData {
 	public static class NotHitConfig {
 		public boolean notHit = true;
 
-		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-		public CanDamage ironGolem = CanDamage.ALL;
+		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.DROPDOWN)
+		public PreventDamage ironGolem = PreventDamage.ALL;
 
 		public boolean villager = true;
 	}
