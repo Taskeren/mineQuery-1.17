@@ -9,7 +9,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -48,7 +47,7 @@ public class NotPlace implements UseBlockCallback, ItemTooltipCallback, Register
 		Direction direction = hitResult.getSide();
 		if(validateItemStack(is) && player.isSneaking()) {
 			var flag = opt.toggle(direction);
-			player.sendMessage(new TranslatableText("text.minequery.notplace.toggle."+(flag ? "prevented" : "allowed"), direction), false);
+			player.sendMessage(Text.translatable("text.minequery.notplace.toggle."+(flag ? "prevented" : "allowed"), direction), false);
 			return ActionResult.SUCCESS;
 		}
 		else if(is.getItem() instanceof BlockItem) {
@@ -65,7 +64,7 @@ public class NotPlace implements UseBlockCallback, ItemTooltipCallback, Register
 			MineQueryConfig.NotPlaceConfig opt = config().notPlaceConfig;
 			for(var direction : Direction.values()) {
 				var prv = opt.isPrevented(direction);
-				lines.add(new TranslatableText("text.minequery.notplace.tooltip."+(prv ? "prevented" : "allowed"),
+				lines.add(Text.translatable("text.minequery.notplace.tooltip."+(prv ? "prevented" : "allowed"),
 						direction.getName()));
 			}
 		}

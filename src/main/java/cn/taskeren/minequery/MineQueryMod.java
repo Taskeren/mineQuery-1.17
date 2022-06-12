@@ -12,6 +12,7 @@ import cn.taskeren.minequery.key.ModKeys;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +37,12 @@ public class MineQueryMod implements ClientModInitializer {
 		useConfig();
 
 		registerCallbacks();
-		registerCommands();
+
+		// Register client commands
+		ClientCommandRegistrationCallback.EVENT.register((dispatcher, access) -> {
+			dispatcher.register(CmdCalculator.getBuilder());
+			dispatcher.register(CmdLocationCalc.getBuilder());
+		});
 
 		ModKeys.init();
 		KeyToCommand.init();
@@ -51,11 +57,6 @@ public class MineQueryMod implements ClientModInitializer {
 		HarvestCheck.INSTANCE.register();
 		NotHit.INSTANCE.register();
 		NotPlace.INSTANCE.register();
-	}
-
-	static void registerCommands() {
-		CmdCalculator.register();
-		CmdLocationCalc.register();
 	}
 
 }

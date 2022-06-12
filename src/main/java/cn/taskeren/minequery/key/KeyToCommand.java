@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ public class KeyToCommand {
 					if(!cmd.isBlank()) {
 						cp.sendChatMessage(cmd);
 					} else {
-						cp.sendMessage(new TranslatableText("text.minequery.key2cmd.emptyOrUnconfigured"), false);
+						cp.sendMessage(Text.translatable("text.minequery.key2cmd.emptyOrUnconfigured"), false);
 					}
 				}
 			}
