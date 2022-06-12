@@ -45,7 +45,7 @@ public class MineQueryConfig implements ConfigData {
 	public static class NotHitConfig {
 		public boolean notHit = true;
 
-		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.DROPDOWN)
+		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
 		public PreventDamage ironGolem = PreventDamage.ALL;
 
 		public boolean villager = true;
