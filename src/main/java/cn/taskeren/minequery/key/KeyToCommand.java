@@ -52,7 +52,7 @@ public class KeyToCommand {
 	}
 
 	private static String getKeyTranslation(int key) {
-		return "keybinding.minequery.key2cmd."+key;
+		return "key2cmd."+key;
 	}
 
 	private static String getConfiguredCommand(int i) {
