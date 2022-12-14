@@ -8,6 +8,7 @@
 
   "text.minequery.key2cmd.emptyOrUnconfigured": "Command is empty or unconfigured!",
   "keybinding.minequery": "MineQuery",
+  "text.minequery.key2cmd.success": "Successfully Executed!",
   "keybinding.minequery.key2cmd.0": "Key2Cmd #0",
   "keybinding.minequery.key2cmd.1": "Key2Cmd #1",
   "keybinding.minequery.key2cmd.2": "Key2Cmd #2",
@@ -26,9 +27,11 @@
   "text.minequery.notplace.tooltip.prevented": "%s: prevented",
 
   "text.autoconfig.minequery.title": "MineQuery Configuration",
-  "text.autoconfig.minequery.option.reseeding": "ReSeeding",
+  "text.autoconfig.minequery.option.harvestXMode": "HarvestX Mode",
   "text.autoconfig.minequery.option.autoRevive": "Auto Revive",
   "text.autoconfig.minequery.option.harvestXConfig": "HarvestX Configuration",
+  "text.autoconfig.minequery.option.harvestXConfig.reseeding": "ReSeeding",
+  "text.autoconfig.minequery.option.harvestXConfig.reseeding.tooltip": "This section only applies to HarvestX Mode.",
   "text.autoconfig.minequery.option.harvestXConfig.harvestX": "Enable HarvestX",
   "text.autoconfig.minequery.option.harvestXConfig.checkCrops": "Check Crops",
   "text.autoconfig.minequery.option.harvestXConfig.checkNetherWart": "Check Nether Wart",

@@ -22,7 +22,7 @@ public class ReSeeding {
 	private ReSeeding() {}
 
 	public static void schedule(PlayerEntity player, BlockPos pos) {
-		if(!config().reseeding) {
+		if(!config().harvestXConfig.reseeding) {
 			return;
 		}
 

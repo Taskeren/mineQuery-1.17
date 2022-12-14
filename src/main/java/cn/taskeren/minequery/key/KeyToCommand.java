@@ -42,7 +42,8 @@ public class KeyToCommand {
 				if(cp != null) {
 					String cmd = getConfiguredCommand(i);
 					if(!cmd.isBlank()) {
-						cp.sendChatMessage(cmd);
+						cp.networkHandler.sendChatCommand(cmd);
+						cp.sendMessage(Text.translatable("text.minequery.key2cmd.success"), true);
 					} else {
 						cp.sendMessage(Text.translatable("text.minequery.key2cmd.emptyOrUnconfigured"), false);
 					}

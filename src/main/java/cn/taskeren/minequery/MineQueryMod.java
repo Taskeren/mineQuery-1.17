@@ -1,6 +1,7 @@
 package cn.taskeren.minequery;
 
 import cn.taskeren.minequery.callback.HarvestCheck;
+import cn.taskeren.minequery.callback.HarvestModLike;
 import cn.taskeren.minequery.callback.NotHit;
 import cn.taskeren.minequery.callback.NotPlace;
 import cn.taskeren.minequery.command.CmdCalculator;
@@ -57,6 +58,7 @@ public class MineQueryMod implements ClientModInitializer {
 		HarvestCheck.INSTANCE.register();
 		NotHit.INSTANCE.register();
 		NotPlace.INSTANCE.register();
+		HarvestModLike.register();
 	}
 
 }

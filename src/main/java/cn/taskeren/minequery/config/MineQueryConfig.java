@@ -4,32 +4,38 @@ import cn.taskeren.minequery.MineQueryMod;
 import cn.taskeren.minequery.callback.NotHit.IronGolem.PreventDamage;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.BoundedDiscrete;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.Excluded;
 import net.minecraft.util.math.Direction;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 
 import static cn.taskeren.minequery.key.KeyToCommand.KEY_BINDING_SIZE;
+import static me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON;
 
 @Config(name = MineQueryMod.MOD_ID)
 public class MineQueryConfig implements ConfigData {
 
-	public boolean reseeding = true;
+	@EnumHandler(option = BUTTON)
+	public HarvestXMode harvestXMode = HarvestXMode.HarvestX;
+
 	public boolean autoRevive = true;
 
 	public boolean feedEm = true;
 
-	@ConfigEntry.Gui.CollapsibleObject
+	@CollapsibleObject
 	public HarvestXConfig harvestXConfig = new HarvestXConfig();
 
-	@ConfigEntry.Gui.CollapsibleObject
+	@CollapsibleObject
 	public NotHitConfig notHitConfig = new NotHitConfig();
 
-	@ConfigEntry.Gui.Excluded
+	@Excluded
 	public NotPlaceConfig notPlaceConfig = new NotPlaceConfig();
 
-	@ConfigEntry.BoundedDiscrete(max = KEY_BINDING_SIZE)
+	@BoundedDiscrete(max = KEY_BINDING_SIZE)
 	public ArrayList<String> key2Cmd = new ArrayList<>();
 
 	public static class HarvestXConfig {
@@ -40,12 +46,13 @@ public class MineQueryConfig implements ConfigData {
 		public boolean checkSugarCane = true;
 		public boolean checkStem = true;
 		public boolean disableOnSneaking = true;
+		public boolean reseeding = true;
 	}
 
 	public static class NotHitConfig {
 		public boolean notHit = true;
 
-		@ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+		@EnumHandler(option = BUTTON)
 		public PreventDamage ironGolem = PreventDamage.ALL;
 
 		public boolean villager = true;
@@ -70,6 +77,11 @@ public class MineQueryConfig implements ConfigData {
 			setPrevented(direction, flag);
 			return flag;
 		}
+	}
+
+	public enum HarvestXMode {
+		HarvestX,
+		HarvestModLike
 	}
 
 }

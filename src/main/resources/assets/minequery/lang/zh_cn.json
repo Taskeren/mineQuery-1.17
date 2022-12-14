@@ -8,6 +8,7 @@
 
   "text.minequery.key2cmd.emptyOrUnconfigured": "指令为空或尚未设置！",
   "keybinding.minequery": "MC宝",
+  "text.minequery.key2cmd.success": "成功执行！",
   "keybinding.minequery.key2cmd.0": "键对令 #0",
   "keybinding.minequery.key2cmd.1": "键对令 #1",
   "keybinding.minequery.key2cmd.2": "键对令 #2",
@@ -26,9 +27,11 @@
   "text.minequery.notplace.tooltip.prevented": "%s面: 禁止",
 
   "text.autoconfig.minequery.title": "MC宝设置",
-  "text.autoconfig.minequery.option.reseeding": "重新播种",
+  "text.autoconfig.minequery.option.harvestXMode": "收割模式",
   "text.autoconfig.minequery.option.autoRevive": "自动复活",
   "text.autoconfig.minequery.option.harvestXConfig": "收割检查设置",
+  "text.autoconfig.minequery.option.harvestXConfig.reseeding": "重新播种",
+  "text.autoconfig.minequery.option.harvestXConfig.reseeding.tooltip": "此选项只对 HarvestX 生效。",
   "text.autoconfig.minequery.option.harvestXConfig.harvestX": "启用收割检查",
   "text.autoconfig.minequery.option.harvestXConfig.checkCrops": "检查作物",
   "text.autoconfig.minequery.option.harvestXConfig.checkNetherWart": "检查地狱疣",
