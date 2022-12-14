@@ -12,18 +12,13 @@ import net.minecraft.world.World;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class HarvestCheck implements AttackBlockCallback, Registerable {
-	public static final HarvestCheck INSTANCE = new HarvestCheck();
+public class HarvestCheck {
 
-	private HarvestCheck() {}
-
-	@Override
-	public void register() {
-		AttackBlockCallback.EVENT.register(this);
+	public static void register() {
+		AttackBlockCallback.EVENT.register(HarvestCheck::interact);
 	}
 
-	@Override
-	public ActionResult interact(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction direction) {
+	public static ActionResult interact(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction direction) {
 		if(!config().harvestXConfig.harvestX || (config().harvestXConfig.disableOnSneaking && player.isSneaking()) || (config().harvestXMode != MineQueryConfig.HarvestXMode.HarvestX)) {
 			return ActionResult.PASS;
 		}

@@ -55,9 +55,9 @@ public class MineQueryMod implements ClientModInitializer {
 	}
 
 	static void registerCallbacks() {
-		HarvestCheck.INSTANCE.register();
-		NotHit.INSTANCE.register();
-		NotPlace.INSTANCE.register();
+		HarvestCheck.register();
+		NotHit.register();
+		NotPlace.register();
 		HarvestModLike.register();
 	}
 

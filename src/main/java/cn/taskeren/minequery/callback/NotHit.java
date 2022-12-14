@@ -13,21 +13,16 @@ import org.jetbrains.annotations.Nullable;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class NotHit implements Registerable {
-
-	public static final NotHit INSTANCE = new NotHit();
+public class NotHit {
 
 	private NotHit() {}
 
-	@Override
-	public void register() {
-		AttackEntityCallback.EVENT.register(IronGolem.INSTANCE);
-		AttackEntityCallback.EVENT.register(Villager.INSTANCE);
+	public static void register() {
+		AttackEntityCallback.EVENT.register(IronGolem::interact);
+		AttackEntityCallback.EVENT.register(Villager::interact);
 	}
 
-	public static class IronGolem implements AttackEntityCallback {
-
-		public static final IronGolem INSTANCE = new IronGolem();
+	public static class IronGolem {
 
 		private IronGolem() {}
 
@@ -38,8 +33,7 @@ public class NotHit implements Registerable {
 			NONE
 		}
 
-		@Override
-		public ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult) {
+		public static ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult) {
 			if(!config().notHitConfig.notHit) {
 				return ActionResult.PASS;
 			}
@@ -64,14 +58,10 @@ public class NotHit implements Registerable {
 		}
 	}
 
-	public static class Villager implements AttackEntityCallback {
-
-		public static final Villager INSTANCE = new Villager();
+	public static class Villager {
 
 		private Villager() {}
-
-		@Override
-		public ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult) {
+		public static ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult) {
 			if(!config().notHitConfig.notHit) {
 				return ActionResult.PASS;
 			}

@@ -19,24 +19,20 @@ import java.util.List;
 
 import static cn.taskeren.minequery.MineQueryMod.config;
 
-public class NotPlace implements UseBlockCallback, ItemTooltipCallback, Registerable {
-
-	public static final NotPlace INSTANCE = new NotPlace();
+public class NotPlace {
 
 	private NotPlace() {}
 
-	@Override
-	public void register() {
-		UseBlockCallback.EVENT.register(this);
-		ItemTooltipCallback.EVENT.register(this);
+	public static void register() {
+		UseBlockCallback.EVENT.register(NotPlace::interact);
+		ItemTooltipCallback.EVENT.register(NotPlace::getTooltip);
 	}
 
 	private static boolean validateItemStack(ItemStack stack) {
 		return stack.isOf(Items.STICK) && stack.getName().getString().equalsIgnoreCase("NotPlace");
 	}
 
-	@Override
-	public ActionResult interact(PlayerEntity player, World world, Hand hand, BlockHitResult hitResult) {
+	public static ActionResult interact(PlayerEntity player, World world, Hand hand, BlockHitResult hitResult) {
 		if(hand != Hand.MAIN_HAND || world.isClient) {
 			return ActionResult.PASS;
 		}
@@ -58,8 +54,7 @@ public class NotPlace implements UseBlockCallback, ItemTooltipCallback, Register
 		return ActionResult.PASS;
 	}
 
-	@Override
-	public void getTooltip(ItemStack stack, TooltipContext context, List<Text> lines) {
+	public static void getTooltip(ItemStack stack, TooltipContext context, List<Text> lines) {
 		if(validateItemStack(stack)) {
 			MineQueryConfig.NotPlaceConfig opt = config().notPlaceConfig;
 			for(var direction : Direction.values()) {
