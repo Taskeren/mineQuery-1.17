@@ -19,9 +19,6 @@ import static me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler.Enu
 @Config(name = MineQueryMod.MOD_ID)
 public class MineQueryConfig implements ConfigData {
 
-	@EnumHandler(option = BUTTON)
-	public HarvestXMode harvestXMode = HarvestXMode.HarvestX;
-
 	public boolean autoRevive = true;
 
 	public boolean feedEm = true;
@@ -47,6 +44,7 @@ public class MineQueryConfig implements ConfigData {
 		public boolean checkStem = true;
 		public boolean disableOnSneaking = true;
 		public boolean reseeding = true;
+		public boolean rightBreak = true;
 	}
 
 	public static class NotHitConfig {
@@ -77,11 +75,6 @@ public class MineQueryConfig implements ConfigData {
 			setPrevented(direction, flag);
 			return flag;
 		}
-	}
-
-	public enum HarvestXMode {
-		HarvestX,
-		HarvestModLike
 	}
 
 }

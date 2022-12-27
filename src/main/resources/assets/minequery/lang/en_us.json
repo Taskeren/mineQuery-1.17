@@ -27,7 +27,6 @@
   "text.minequery.notplace.tooltip.prevented": "%s: prevented",
 
   "text.autoconfig.minequery.title": "MineQuery Configuration",
-  "text.autoconfig.minequery.option.harvestXMode": "HarvestX Mode",
   "text.autoconfig.minequery.option.autoRevive": "Auto Revive",
   "text.autoconfig.minequery.option.harvestXConfig": "HarvestX Configuration",
   "text.autoconfig.minequery.option.harvestXConfig.reseeding": "ReSeeding",
@@ -39,6 +38,7 @@
   "text.autoconfig.minequery.option.harvestXConfig.checkSugarCane": "Check Sugar Cane",
   "text.autoconfig.minequery.option.harvestXConfig.checkStem": "Check Stem",
   "text.autoconfig.minequery.option.harvestXConfig.disableOnSneaking": "Disable HarvestX when Sneaking",
+  "text.autoconfig.minequery.option.harvestXConfig.rightBreak": "Right Break",
   "text.autoconfig.minequery.option.notHitConfig": "Not Hit Configuration",
   "text.autoconfig.minequery.option.notHitConfig.notHit": "Enable Not Hit",
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "Prevent Attack Iron Golem",

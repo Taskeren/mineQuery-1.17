@@ -1,6 +1,5 @@
 package cn.taskeren.minequery.callback;
 
-import cn.taskeren.minequery.config.MineQueryConfig;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +18,7 @@ public class HarvestCheck {
 	}
 
 	public static ActionResult interact(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction direction) {
-		if(!config().harvestXConfig.harvestX || (config().harvestXConfig.disableOnSneaking && player.isSneaking()) || (config().harvestXMode != MineQueryConfig.HarvestXMode.HarvestX)) {
+		if(!config().harvestXConfig.harvestX || (config().harvestXConfig.disableOnSneaking && player.isSneaking())) {
 			return ActionResult.PASS;
 		}
 

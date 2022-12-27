@@ -22,7 +22,8 @@ public class ReSeeding {
 	private ReSeeding() {}
 
 	public static void schedule(PlayerEntity player, BlockPos pos) {
-		if(!config().harvestXConfig.reseeding) {
+		// 使用 RightBreak 时禁用 ReSeeding
+		if(!config().harvestXConfig.reseeding || (config().harvestXConfig.rightBreak)) {
 			return;
 		}
 
