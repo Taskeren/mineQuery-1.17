@@ -1,17 +1,37 @@
 # MineQuery Mod
 
-[MCBBS宣传贴](https://www.mcbbs.net/thread-1215659-1-1.html)
+[Modrinth](https://modrinth.com/mod/minequery)
+[MCBBS](https://www.mcbbs.net/thread-1215659-1-1.html)
 
-## 介绍
+## Features
 
-我制作 __MineQuery__ 为了整一些简单的辅助。所以可以看到模组里的功能都是一些辅助类功能。
+### HarvestX
+Disables destroying immature crops, the bottom block of cactus/sugar cane, and pumpkin/melon stems.
 
-## FAQ
+### Replanting (ReSeeding)
+Automatic replants crops on harvest with the seed held in your hand. Depends on HarvestX.
 
-### 我有想法！
+### NotHit
+Disables attacking Villagers and Iron Golems.
 
-如果你有什么想法，可以在 issues 里告诉我。如果可以的话我会尽我所能加入到模组中。
+### AutoRevive
+Automatically respawns on death
 
-### 我有问题！
+### Calculation Command
+Calculates equations automatically using '/= {expression}'
 
-如果你找到了一个问题，尽管在 issues 里提出，我会尽快修复这些问题。
+### Location Convert Command
+Uses '/localc <toNether/toOverworld> ' to convert coordinates from different dimensions.
+
+### Key2Cmd
+Set a keybind to send a command or message.
+
+### NotPlace!
+Use a stick named 'NotPlace' to enable/disable placing on the sides of a block. Useful for Skyblock players trying to place a floor.
+
+### Feed'em
+Right-clicks all animals nearby when you shift. Can be used for breeding animals, or shearing sheep.
+
+## Feature Request or Bug Report
+
+Just open a new issue.
