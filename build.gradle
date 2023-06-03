@@ -106,17 +106,21 @@ publishing {
 	}
 }
 
-modrinth {
-	token = "${modrinth}"
-	projectId = "minequery"
-	versionNumber = "${project.version}-beta"
-	versionType = "beta"
-	uploadFile = jar
-	gameVersions = ["1.19", "1.19.3"]
-	loaders = ["fabric"]
-	dependencies {
-		required.project "fabric-api"
-		required.project "cloth-config"
-		optional.project "modmenu"
-	}
+// Need to specify the Environment Variable!
+var modrinthToken = System.getenv("ModrinthToken")
+if(modrinthToken != null) {
+    modrinth {
+    	token = "${modrinthToken}"
+    	projectId = "minequery"
+    	versionNumber = "${project.version}-beta"
+    	versionType = "beta"
+    	uploadFile = remapJar
+    	gameVersions = ["1.19", "1.19.4"]
+    	loaders = ["fabric"]
+    	dependencies {
+    		required.project "fabric-api"
+    		required.project "cloth-config"
+    		optional.project "modmenu"
+    	}
+    }
 }
