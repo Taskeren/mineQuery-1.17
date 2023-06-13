@@ -45,7 +45,7 @@ public class HarvestModLike {
 
 			if(config().harvestXConfig.checkCrops) {
 				if(state.getBlock() instanceof CropBlock crop) {
-					int age = state.get(crop.getAgeProperty());
+					int age = crop.getAge(state);
 					int max = crop.getMaxAge();
 					if (age == max) {
 						attackAndSwingHand(pos, side);

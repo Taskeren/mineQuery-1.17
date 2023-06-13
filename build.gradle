@@ -115,7 +115,7 @@ if(modrinthToken != null) {
     	versionNumber = "${project.version}-beta"
     	versionType = "beta"
     	uploadFile = remapJar
-    	gameVersions = ["1.19", "1.19.4"]
+    	gameVersions = ["1.20", "1.20.1"]
     	loaders = ["fabric"]
     	dependencies {
     		required.project "fabric-api"
