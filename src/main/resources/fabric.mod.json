@@ -9,9 +9,9 @@
     "Taskeren"
   ],
   "contact": {
-    "homepage": "https://github.com/nitu2003/mineQuery-1.17",
-    "sources": "https://github.com/nitu2003/mineQuery-1.17",
-    "issues": "https://github.com/nitu2003/mineQuery-1.17/issues"
+    "homepage": "https://github.com/Taskeren/mineQuery-1.17",
+    "sources": "https://github.com/Taskeren/mineQuery-1.17",
+    "issues": "https://github.com/Taskeren/mineQuery-1.17/issues"
   },
 
   "license": "CC0-1.0",
@@ -31,9 +31,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.83.0",
     "fabric": "*",
-    "minecraft": "1.19.x",
+    "minecraft": ">=1.20.x",
     "java": ">=17",
     "cloth-config": "*"
   },
