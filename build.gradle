@@ -112,10 +112,10 @@ if(modrinthToken != null) {
     modrinth {
     	token = "${modrinthToken}"
     	projectId = "minequery"
-    	versionNumber = "${project.version}-beta"
+    	versionNumber = "${project.version}"
     	versionType = "beta"
     	uploadFile = remapJar
-    	gameVersions = ["1.20", "1.20.1"]
+    	gameVersions = ["${project.for_minecraft_version}"]
     	loaders = ["fabric"]
     	dependencies {
     		required.project "fabric-api"
