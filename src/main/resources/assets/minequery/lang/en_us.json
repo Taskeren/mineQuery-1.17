@@ -20,6 +20,7 @@
   "keybinding.minequery.key2cmd.8": "Key2Cmd #8",
   "keybinding.minequery.key2cmd.9": "Key2Cmd #9",
   "keybinding.minequery.feed_em": "Feed'em",
+  "keybinding.minequery.open_config": "Open MineQuery Config",
 
   "text.minequery.notplace.toggle.allowed": "Allowed to place on %s",
   "text.minequery.notplace.toggle.prevented": "Prevented to place on %s",

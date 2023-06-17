@@ -20,6 +20,7 @@
   "keybinding.minequery.key2cmd.8": "键对令 #8",
   "keybinding.minequery.key2cmd.9": "键对令 #9",
   "keybinding.minequery.feed_em": "喂它丫的",
+  "keybinding.minequery.open_config": "打开 MineQuery 配置",
 
   "text.minequery.notplace.toggle.allowed": "解禁%s面的放置",
   "text.minequery.notplace.toggle.prevented": "禁止%s面的放置",
