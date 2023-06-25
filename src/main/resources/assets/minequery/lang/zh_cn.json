@@ -21,6 +21,7 @@
   "keybinding.minequery.key2cmd.9": "键对令 #9",
   "keybinding.minequery.feed_em": "喂它丫的",
   "keybinding.minequery.open_config": "打开 MineQuery 配置",
+  "keybinding.minequery.key_to_cmd_settings": "打开键对令配置",
 
   "text.minequery.notplace.toggle.allowed": "解禁%s面的放置",
   "text.minequery.notplace.toggle.prevented": "禁止%s面的放置",
@@ -45,5 +46,6 @@
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "不打铁傀儡",
   "text.autoconfig.minequery.option.notHitConfig.villager": "不打村民",
   "text.autoconfig.minequery.option.key2Cmd": "键对令指令设置",
+  "text.autoconfig.minequery.option.key2Cmd.short": "键对令",
   "text.autoconfig.minequery.option.feedEm": "喂它丫的"
 }

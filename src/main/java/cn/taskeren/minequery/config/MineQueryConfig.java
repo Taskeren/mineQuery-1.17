@@ -4,7 +4,6 @@ import cn.taskeren.minequery.MineQueryMod;
 import cn.taskeren.minequery.callback.NotHit.IronGolem.PreventDamage;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry.BoundedDiscrete;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.Excluded;
@@ -13,7 +12,6 @@ import net.minecraft.util.math.Direction;
 import java.util.ArrayList;
 import java.util.EnumMap;
 
-import static cn.taskeren.minequery.key.KeyToCommand.KEY_BINDING_SIZE;
 import static me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON;
 
 @Config(name = MineQueryMod.MOD_ID)
@@ -32,7 +30,7 @@ public class MineQueryConfig implements ConfigData {
 	@Excluded
 	public NotPlaceConfig notPlaceConfig = new NotPlaceConfig();
 
-	@BoundedDiscrete(max = KEY_BINDING_SIZE)
+	@Excluded
 	public ArrayList<String> key2Cmd = new ArrayList<>();
 
 	public static class HarvestXConfig {

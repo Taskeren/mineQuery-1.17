@@ -1,6 +1,5 @@
 package cn.taskeren.minequery.key;
 
-import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -42,7 +41,11 @@ public class KeyToCommand {
 				if(cp != null) {
 					String cmd = getConfiguredCommand(i);
 					if(!cmd.isBlank()) {
-						cp.networkHandler.sendChatCommand(cmd);
+						if(cmd.startsWith("/")) {
+							cp.networkHandler.sendChatCommand(cmd.substring(1));
+						} else {
+							cp.networkHandler.sendChatMessage(cmd);
+						}
 						cp.sendMessage(Text.translatable("text.minequery.key2cmd.success"), true);
 					} else {
 						cp.sendMessage(Text.translatable("text.minequery.key2cmd.emptyOrUnconfigured"), false);
@@ -57,11 +60,11 @@ public class KeyToCommand {
 	}
 
 	private static String getConfiguredCommand(int i) {
-		return i >= 0 && i < getReversedCommandList().size() ? getReversedCommandList().get(i) : "";
+		return i >= 0 && i < getCommandList().size() ? getCommandList().get(i) : "";
 	}
 
-	private static List<String> getReversedCommandList() {
-		return Lists.reverse(config().key2Cmd);
+	private static List<String> getCommandList() {
+		return config().key2Cmd;
 	}
 
 }

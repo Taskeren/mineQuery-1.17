@@ -2,6 +2,7 @@ package cn.taskeren.minequery.key;
 
 import cn.taskeren.minequery.MineQueryMod;
 import cn.taskeren.minequery.config.MineQueryConfig;
+import cn.taskeren.minequery.gui.Key2CommandSettingScreen;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -12,8 +13,7 @@ import org.apache.commons.compress.utils.Lists;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_M;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_Y;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class ModKeys {
 
@@ -28,6 +28,8 @@ public class ModKeys {
 			var screen = AutoConfig.getConfigScreen(MineQueryConfig.class, cli.currentScreen).get();
 			cli.setScreen(screen);
 		});
+
+		registerKey("key_to_cmd_settings", GLFW_KEY_J, cli -> Key2CommandSettingScreen.show());
 
 		// register general tick listener
 		ClientTickEvents.END_CLIENT_TICK.register(ModKeys::tick);

@@ -5,6 +5,7 @@ import cn.taskeren.minequery.callback.HarvestModLike;
 import cn.taskeren.minequery.callback.NotHit;
 import cn.taskeren.minequery.callback.NotPlace;
 import cn.taskeren.minequery.command.CmdCalculator;
+import cn.taskeren.minequery.command.CmdKey2CmdSettings;
 import cn.taskeren.minequery.command.CmdLocationCalc;
 import cn.taskeren.minequery.config.MineQueryConfig;
 import cn.taskeren.minequery.key.FeedEm;
@@ -27,6 +28,10 @@ public class MineQueryMod implements ClientModInitializer {
 		return AutoConfig.getConfigHolder(MineQueryConfig.class).getConfig();
 	}
 
+	public static void saveConfig() {
+		AutoConfig.getConfigHolder(MineQueryConfig.class).save();
+	}
+
 	@Override
 	public void onInitializeClient() {
 		LOGGER.info("Minequery!");
@@ -43,6 +48,7 @@ public class MineQueryMod implements ClientModInitializer {
 		ClientCommandRegistrationCallback.EVENT.register((dispatcher, access) -> {
 			dispatcher.register(CmdCalculator.getBuilder());
 			dispatcher.register(CmdLocationCalc.getBuilder());
+			dispatcher.register(CmdKey2CmdSettings.getBuilder());
 		});
 
 		ModKeys.init();

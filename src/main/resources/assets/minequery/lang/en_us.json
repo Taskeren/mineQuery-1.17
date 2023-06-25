@@ -21,6 +21,7 @@
   "keybinding.minequery.key2cmd.9": "Key2Cmd #9",
   "keybinding.minequery.feed_em": "Feed'em",
   "keybinding.minequery.open_config": "Open MineQuery Config",
+  "keybinding.minequery.key_to_cmd_settings": "Open Key to Command Settings",
 
   "text.minequery.notplace.toggle.allowed": "Allowed to place on %s",
   "text.minequery.notplace.toggle.prevented": "Prevented to place on %s",
@@ -45,5 +46,6 @@
   "text.autoconfig.minequery.option.notHitConfig.ironGolem": "Prevent Attack Iron Golem",
   "text.autoconfig.minequery.option.notHitConfig.villager": "Prevent Attack Villager",
   "text.autoconfig.minequery.option.key2Cmd": "Key2Cmd Command Configuration",
+  "text.autoconfig.minequery.option.key2Cmd.short": "Key to Command",
   "text.autoconfig.minequery.option.feedEm": "Feed 'Em"
 }
