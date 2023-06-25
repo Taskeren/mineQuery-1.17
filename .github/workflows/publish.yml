@@ -26,8 +26,11 @@ jobs:
         with:
           name: MineQuery
           path: build/libs/
-      - name: get latest tag
-        run: echo "tag_ver=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+      - id: tag_version
+        name: get latest tag
+        run: |
+          echo "ver=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+          echo "Found latest git tag: $(git describe --tags --abbrev=0)"
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: x77y6Uh8
@@ -46,5 +49,5 @@ jobs:
             build/libs/!(*-@(dev|sources|javadoc)).jar
 
           name: MineQuery
-          version: ${{ tag_ver }} # the release tag created
+          version: ${{ steps.tag_version.outputs.ver }} # the release tag
           version-type: beta
