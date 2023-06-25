@@ -1,0 +1,48 @@
+name: publish
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+      - name: validate gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: setup jdk
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: MineQuery
+          path: build/libs/
+      - id: tag_version
+        name: get latest tag
+        run: |
+          echo "ver=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+          echo "Found latest git tag: $(git describe --tags --abbrev=0)"
+      - uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: x77y6Uh8
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          # Only include this section if you wish to publish
+          # your assets on CurseForge.
+          # curseforge-id: 394468
+          # curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          # Only include this section if you wish to publish
+          # your assets on GitHub.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          version-type: beta
