@@ -1,8 +1,8 @@
 package cn.taskeren.minequery
 
-import cn.taskeren.minequery.command.CmdCalculator
-import cn.taskeren.minequery.command.CmdKey2CmdSettings
-import cn.taskeren.minequery.command.CmdLocationCalc
+import cn.taskeren.minequery.command.CommandCalculator
+import cn.taskeren.minequery.command.CommandKey2CommandSettings
+import cn.taskeren.minequery.command.CommandLocationCalculator
 import cn.taskeren.minequery.config.MineQueryConfig
 import cn.taskeren.minequery.features.*
 import me.shedaniel.autoconfig.AutoConfig
@@ -48,9 +48,9 @@ object MineQuery : ClientModInitializer {
 
 		// register commands
 		ClientCommandRegistrationCallback.EVENT.register { dispatcher, _ ->
-			dispatcher.register(CmdCalculator.getBuilder())
-			dispatcher.register(CmdLocationCalc.getBuilder())
-			dispatcher.register(CmdKey2CmdSettings.getBuilder())
+			dispatcher.register(CommandCalculator)
+			dispatcher.register(CommandLocationCalculator)
+			dispatcher.register(CommandKey2CommandSettings)
 		}
 	}
 

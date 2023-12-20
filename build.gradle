@@ -45,6 +45,10 @@ dependencies {
 	def calcLib = "com.github.octocynth:calculator-lib:8c69c67b0e"
 	implementation calcLib
 	include calcLib
+
+	var brigadierX = "com.github.taskeren:brigadierX:${brigadier_x_version}"
+	implementation brigadierX
+	include brigadierX
 }
 
 base {
