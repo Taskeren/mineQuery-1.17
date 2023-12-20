@@ -25,7 +25,7 @@
 
   "text.minequery.notplace.toggle.allowed": "Allowed to place on %s",
   "text.minequery.notplace.toggle.prevented": "Prevented to place on %s",
-  "text.minequery.notplace.tooltip.allowed": "%S: allowed",
+  "text.minequery.notplace.tooltip.allowed": "%s: allowed",
   "text.minequery.notplace.tooltip.prevented": "%s: prevented",
 
   "text.autoconfig.minequery.title": "MineQuery Configuration",
